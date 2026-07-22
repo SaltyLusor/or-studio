@@ -1,0 +1,726 @@
+/* ===========================
+   Grundeinstellungen
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+:root{
+    --primary-color:#69b7ff;
+    --secondary-color:#4f5d75;
+    --background-color:#edfaff;
+    --text-color:#2c3e50;
+    --shadow-color:rgba(120,170,255,.15);
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#dff5ff,#edfaff,#ffffff);
+    color:#2c3e50;
+    line-height:1.7;
+}
+
+body.dark-mode{
+    background:linear-gradient(135deg,#1e1e1e,#2c2c2c,#3a3a3a);
+    color:#f0f0f0;
+}
+
+#dark-mode-toggle {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #eef8ff;
+    color: #69b7ff;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    transform: rotate(15deg) scale(1.08);
+    background: #dcefff;
+    box-shadow: 0 10px 25px rgba(105, 183, 255, 0.25);
+}
+
+#dark-mode-toggle i {
+    margin: 0;
+}
+
+body.dark-mode #dark-mode-toggle {
+    color: #ffd76a;
+    background: #3a4049;
+}
+
+body.dark-mode header {
+    background: rgba(30, 30, 35, 0.9);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode section {
+    background: #292d33;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode section p {
+    color: #d4d9df;
+}
+
+body.dark-mode section h2 {
+    color: #8dccff;
+}
+
+body.dark-mode label {
+    color: #f0f0f0;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    color: #f0f0f0;
+    background: #363b43;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus {
+    background: #404650;
+}
+
+body.dark-mode footer {
+    color: #d4d9df;
+    background: #24282e;
+}
+
+body.dark-mode #Insta:hover,
+body.dark-mode #TikTok:hover,
+body.dark-mode #Snap:hover,
+body.dark-mode #Discord:hover,
+body.dark-mode #GitHub:hover,
+body.dark-mode #Twitch:hover
+{ 
+    background-color: #3b414a;
+}
+
+body.dark-mode .project-card {
+    background: #292d33;
+    border-color: rgba(141, 204, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .project-info h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .project-info p {
+    color: #cbd2da;
+}
+
+
+/* ===========================
+   Header
+=========================== */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 8px 30px rgba(0,0,0,.05);
+}
+
+header h1{
+    color:#69b7ff;
+    font-size:30px;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#4f5d75;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#69b7ff;
+}
+
+h3{
+    color: #4a93db;
+    text-align: left;
+    margin: auto;
+    font-size: 24px;
+}
+
+/* ===========================
+   Hauptbereich
+=========================== */
+
+main{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    padding:60px 0;
+}
+
+section{
+    background:white;
+    padding:45px;
+    margin-bottom:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 40px rgba(120,170,255,.15);
+
+    transition:.35s;
+}
+
+section:hover{
+    transform:translateY(-6px);
+    box-shadow:0 25px 50px rgba(120,170,255,.22);
+}
+
+section h2{
+    color:#5aa8ff;
+    margin-bottom:15px;
+    font-size:32px;
+}
+
+section p{
+    color:#666;
+    font-size:17px;
+}
+
+
+/* ===========================
+   Formular
+=========================== */
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-top:20px;
+}
+
+label{
+    font-weight:600;
+}
+
+input,
+textarea{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#eef8ff;
+
+    font-size:16px;
+
+    transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+    background:#ffffff;
+
+    box-shadow:0 0 0 3px rgba(105,183,255,.25);
+
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+/* ===========================
+   Button
+=========================== */
+
+button{
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#7fc8ff;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    background:#5eb8ff;
+
+    box-shadow:0 15px 25px rgba(105,183,255,.35);
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    background:white;
+
+    color:#777;
+
+    box-shadow:0 -5px 25px rgba(0,0,0,.05);
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#edf8ff;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#8dd2ff;
+    border-radius:30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#69b7ff;
+}
+
+/* ===========================
+   Animation
+=========================== */
+
+section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+section{
+
+    padding:30px;
+
+}
+
+header h1{
+
+    font-size:24px;
+
+}
+
+section h2{
+
+    font-size:26px;
+
+}
+
+}
+
+i {
+    color:#69b7ff;
+    margin: 1px 5px; 
+
+}
+
+#header2{
+    color: #4f5d75;
+    font-size: 16px;
+    text-align: left;
+
+}
+
+
+/* ===========================
+    Social-Media-Links
+=========================== */
+section#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 0;
+}
+
+
+/* Instagram-Link */
+#Insta:link{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#Insta:visited{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#Insta:hover{
+    text-decoration: none;
+    background-color: #e2e2e2;
+}
+
+
+/* TIkTok-Link */
+#TikTok:link{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#TikTok:visited{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#TikTok:hover{
+    text-decoration: none;
+    background-color: #e2e2e2;
+}
+
+
+/*Snapchat-Link */
+#Snap:link{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#Snap:visited{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#Snap:hover{
+    text-decoration: none;
+    background-color: #e2e2e2;
+}
+
+/*Discord-Link */
+#Discord:link{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#Discord:visited{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#Discord:hover{
+    text-decoration: none;
+    background-color: #e2e2e2;
+}
+
+#GitHub:link{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#GitHub:visited{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#GitHub:hover{
+    text-decoration: none;
+    background-color: #e2e2e2;
+}
+
+#Twitch:link{
+    color: #69b7ff;
+    text-decoration: none;
+}   
+
+#Twitch:visited{
+    color: #69b7ff;
+    text-decoration: none;
+}
+
+#Twitch:hover{
+    text-decoration: none;
+    background-color: #e2e2e2;
+}
+
+
+/* ===========================
+   Logo
+=========================== */
+.logo-container{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-top: 20px;
+}
+
+.logo-container img{
+    width: 100px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(120,170,255,.15);
+    transition:.35s;
+}
+
+
+/* ===========================
+   Motorrad-Icon
+=========================== */
+#Motorrad{
+    gap: 5px 10px;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    text-align: center;
+    margin: auto;
+}
+
+#Motorrad img{
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(120,170,255,.15);
+    transition:.35s;
+}
+
+img:hover{
+    transform:translateY(-6px);
+    box-shadow:0 25px 50px rgba(120,170,255,.22);
+}
+
+
+/* ===========================
+   TikTok Portfolio
+=========================== */
+
+#portfolio {
+    background: transparent;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#portfolio:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: #69b7ff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.tiktok-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+.project-card {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(105, 183, 255, 0.18);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(120, 170, 255, 0.15);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(120, 170, 255, 0.24);
+}
+
+.project-card .tiktok-embed {
+    width: 100%;
+    min-width: 0 !important;
+    margin: 0 auto !important;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info span {
+    color: #69b7ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.project-info h3 {
+    margin: 8px 0;
+    color: #2c3e50;
+    font-size: 22px;
+}
+
+.project-info p {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+}
+
+.project-info a {
+    display: inline-block;
+    padding: 11px 18px;
+
+    color: white;
+    background: #69b7ff;
+    border-radius: 12px;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.project-info a:hover {
+    background: #4fa8f5;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1000px) {
+    .tiktok-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .tiktok-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+
+/* ===========================
+    Scroll Button
+=========================== */
+
+.scroll-indicator {
+    color: #4f5d75;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+    box-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.scroll-indicator:hover{
+    color: #69b7ff;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
