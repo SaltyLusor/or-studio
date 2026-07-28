@@ -3,204 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Website</title>
+    <meta name="description" content="OR Studio – Portfolio von Oli: Webentwicklung, Design und Motorrad-Content.">
+    <title>OR Studio | Developer • Designer • Creator</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="impressum" href="impressum.html">
 </head>
-<body>
-    <header>
-        <h1>or-Studio</h1>
-        <button id="dark-mode-toggle" type="button" aria-label="Dark Mode toggle">
-            <i class="fas fa-moon"></i>
-        </button>
-            <div class="logo-container">
-                <a href="#top">
-                    <img src="Images/Logo.png" alt="Logo">
-                </a>
-            </div>
+<body id="top">
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Zurück zum Seitenanfang">
+            <span class="brand-name">OR Studio</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Hauptnavigation">
+            <a href="#about">Über mich</a>
+            <a href="#skills">Skills</a>
+            <a href="#socials">Social Media</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="dark-mode-toggle" type="button" aria-label="Farbschema wechseln" aria-pressed="false">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+
+            <a class="logo-container" href="#top" aria-label="Zurück zum Seitenanfang">
+                <img src="Images/Logo.png" alt="OR Studio Logo">
+            </a>
+        </div>
     </header>
 
-
     <main>
-        <section id="intro">
-            <h2>Willkommen auf meiner Website!<br></h2>
-            <h3>Servus ich bin Oli, ein leidenschaftlicher Entwickler, Designer und Content-Creator.<br></h3> 
-            <h3>Hier finden Sie eine Auswahl meiner Arbeiten und Projekte.</h3>
-        </section>
+        <section id="hero" class="content-section hero-section">
+            <div class="hero-container">
+                <div class="hero-avatar">
+                    <img src="Images/CleanLogo.png" alt="Oli auf seinem Motorrad" class="hero-image">
+                </div>
 
-    <section id="hero">
+                <p class="hero-label">Willkommen bei OR Studio</p>
 
-    <div class="hero-container">
+                <h1 class="hero-title">Hi, ich bin <span>Oli.</span></h1>
 
-        <div class="hero-avatar">
-            <img src="Images/Id-Motorrad.jpg" alt="Oliver auf dem Motorrad" class="hero-image">
-        </div>
+                <p class="hero-subtitle">Developer • Designer • Creator</p>
 
-        <h1 class="hero-title">
-            Hi, ich bin <span>Oli.</span>
-        </h1>
-
-        <p class="hero-subtitle">
-            Developer • Designer • Creator
-        </p>
-
-        <p class="hero-description">
-            Ich entwickle moderne Webseiten, gestalte digitale Designs und
-            produziere hochwertigen Motorrad-Content.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#about" class="btn-primary">
-                Über mich
-            </a>
-
-            <a href="#portfolio" class="btn-secondary">
-                Portfolio
-            </a>
-
-        </div>
-
-        <div class="scroll-indicator">
-            <i class="fa-solid fa-chevron-down"></i>
-        </div>
-
-    </div>
-
-</section>
-    
-
-
-
-
-
-
-    
-    <section id="about">
-            <h2>Über mich</h2>
-                <p>Hi ich bin Oli, 22, ich bin ein passionierter Entwickler und Designer, sowie upcoming Content-Creator. <br>
-                Ich liebe es, spielerisch, kreativ Lösungen zu entwickeln und zu gestalten, außerdem ist Video editing eine weitere Leidenschaft von mir. <br>
-                Ebenso liebe ich es, meine Leidenschaft für Motorräder mit meiner Kreativität zu verbinden und spannende Inhalte zu erstellen. <br>
-                <br>
-                Ich bin immer auf der Suche nach neuen Herausforderungen und Möglichkeiten, meine Fähigkeiten weiterzuentwickeln und meine Kreativität auszuleben. <br>
-                Ebenfalls bin ich ein großer Fan von Social Media und nutze diese Plattformen, um meine Arbeiten zu präsentieren und mit anderen Kreativen in Kontakt zu treten. <br>
-                Ich freue mich darauf, meine Leidenschaft für Technologie, Design und Kreativität mit euch zu teilen und gemeinsam spannende Projekte zu realisieren. <br>
-                
+                <p class="hero-description">
+                    Ich entwickle moderne Webseiten, gestalte digitale Designs und produziere hochwertigen Motorrad-Content.
                 </p>
-    </section>
 
-        <section id="home">
-            <h2>Social-Media-Links:</h2>
-            <i class="fa-brands fa-instagram"></i><a id="Insta" href="https://www.instagram.com/oli.rc390">Instagram</a>
-            <i class="fa-brands fa-tiktok"></i><a id="TikTok" href="https://www.tiktok.com/@oli.rc390?is_from_webapp=1&sender_device=pc">TikTok</a>
-            <i class="fa-brands fa-snapchat"></i><a id="Snap" href="https://www.snapchat.com/@oli.rc390?sender_web_id=d5bf1535-67ec-42c7-806c-a80c3f8b2e58&device_type=desktop&is_copy_url=true">Snapchat</a>
-            <i class="fa-brands fa-discord"></i><a id="Discord" href="https://discord.gg/raYAhKkvst">Discord</a>
-            <i class="fa-brands fa-github"></i><a id="GitHub" href="https://github.com/SaltyLusor">GitHub</a>
-            <i class="fa-brands fa-twitch"></i><a id="Twitch" href="https://www.twitch.tv/xRyoka">Twitch</a>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Projekte ansehen</a>
+                    <a href="#about" class="btn btn-secondary">Mehr über mich</a>
+                </div>
+            </div>
         </section>
 
-        <section id="portfolio">
+        <section id="about" class="content-section">
             <div class="section-heading">
-                <p class="section-label">Ausgewählte Arbeiten</p>
-                <h2>Meine letzten TikTok-Projekte</h2>
-                <p>
-                    Eine Auswahl meiner neuesten Motorrad-Edits und Content-Projekte.
-                </p>
+                <span class="section-label">Über mich</span>
+                <h2>Kreativität trifft Technik</h2>
             </div>
 
-        <div class="tiktok-grid">
+            <p>
+                Hi, ich bin Oli. Ich beschäftige mich mit Webentwicklung, digitalem Design und Content Creation.
+                Besonders begeistert mich die Verbindung aus Technik, Kreativität und visueller Gestaltung.
+            </p>
 
-        <article class="project-card">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@oli.rc390/video/7655897236945046806" data-video-id="7655897236945046806" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@oli.rc390" href="https://www.tiktok.com/@oli.rc390?refer=embed">@oli.rc390</a> The world gets quieter at full throttle 🖤🏍️📷 <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="motorcycle" target="_blank" href="https://www.tiktok.com/tag/motorcycle?refer=embed">#motorcycle</a> <a title="bikelife" target="_blank" href="https://www.tiktok.com/tag/bikelife?refer=embed">#bikelife</a> <a title="motovlog" target="_blank" href="https://www.tiktok.com/tag/motovlog?refer=embed">#motovlog</a> <a title="rider" target="_blank" href="https://www.tiktok.com/tag/rider?refer=embed">#rider</a> <a title="edit" target="_blank" href="https://www.tiktok.com/tag/edit?refer=embed">#Edit</a> <a title="ktmrc390" target="_blank" href="https://www.tiktok.com/tag/ktmrc390?refer=embed">#ktmrc390</a> <a title="nürnberg" target="_blank" href="https://www.tiktok.com/tag/n%C3%BCrnberg?refer=embed">#Nürnberg</a> <a title="deepthoughts" target="_blank" href="https://www.tiktok.com/tag/deepthoughts?refer=embed">#deepthoughts</a> <a title="viral" target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a> <a target="_blank" title="♬ Originalton - Oli.Nbg - Oli.RC390" href="https://www.tiktok.com/music/Originalton-OliNbg-7655897373255715606?refer=embed">♬ Originalton - Oli.Nbg - Oli.RC390</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-            
-            <div class="project-info">
-                <span>Content Creation</span>
-                <h3>Eines der beliebtesten Edits</h3>
-
-                <a href="https://www.tiktok.com/@oli.rc390?lang=de-DE"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Auf TikTok ansehen
-                </a>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@oli.rc390/video/7654752152254156055" data-video-id="7654752152254156055" style="max-width: 605px;min-width: 325px;" >
-            <section> <a target="_blank" title="@oli.rc390" href="https://www.tiktok.com/@oli.rc390?refer=embed">@oli.rc390</a> Peace isn&#39;t a place. It&#39;s a ride 🖤🏍️ <a title="motorcycle" target="_blank" href="https://www.tiktok.com/tag/motorcycle?refer=embed">#motorcycle</a>
-            <a title="bikelife" target="_blank" href="https://www.tiktok.com/tag/bikelife?refer=embed">#bikelife</a> <a title="motovlog" target="_blank" href="https://www.tiktok.com/tag/motovlog?refer=embed">#motovlog</a> <a title="rider" target="_blank" href="https://www.tiktok.com/tag/rider?refer=embed">#rider</a>
-            <a title="edit" target="_blank" href="https://www.tiktok.com/tag/edit?refer=embed">#Edit</a> <a title="ktmrc390" target="_blank" href="https://www.tiktok.com/tag/ktmrc390?refer=embed">#ktmrc390</a> <a title="nürnberg" target="_blank" href="https://www.tiktok.com/tag/n%C3%BCrnberg?refer=embed">#Nürnberg</a> <a title="deepthoughts" target="_blank" href="https://www.tiktok.com/tag/deepthoughts?refer=embed">#deepthoughts</a> <a title="explorepage✨" target="_blank" href="https://www.tiktok.com/tag/explorepage%E2%9C%A8?refer=embed">#explorepage✨</a> <a target="_blank" title="♬ original sound - Oli.Nbg - Oli.RC390" href="https://www.tiktok.com/music/original-sound-OliNbg-7654752217370462998?refer=embed">♬ original sound - Oli.Nbg - Oli.RC390</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-
-            <div class="project-info">
-                <span>Content Creation</span>
-                <h3>Eines der meistgesehenen Edits</h3>
-
-
-                <a href="https://www.tiktok.com/@oli.rc390?lang=de-DE"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Auf TikTok ansehen
-                </a>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@oli.rc390/video/7657744574764322070" data-video-id="7657744574764322070" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@oli.rc390" href="https://www.tiktok.com/@oli.rc390?refer=embed">@oli.rc390</a> Wo sind meine Singlebiker Ladys? 🖤😍💐🏍️ <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed">#fyp</a> <a title="foryoupage❤️❤️" target="_blank" href="https://www.tiktok.com/tag/foryoupage%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F?refer=embed">#foryoupage❤️❤️</a> <a title="motorcycle" target="_blank" href="https://www.tiktok.com/tag/motorcycle?refer=embed">#motorcycle</a> <a title="bikelife" target="_blank" href="https://www.tiktok.com/tag/bikelife?refer=embed">#bikelife</a> <a title="motovlog" target="_blank" href="https://www.tiktok.com/tag/motovlog?refer=embed">#motovlog</a> <a title="edit" target="_blank" href="https://www.tiktok.com/tag/edit?refer=embed">#Edit</a> <a title="ktmrc390" target="_blank" href="https://www.tiktok.com/tag/ktmrc390?refer=embed">#ktmrc390</a> <a title="nürnberg" target="_blank" href="https://www.tiktok.com/tag/n%C3%BCrnberg?refer=embed">#Nürnberg</a> <a title="sunset" target="_blank" href="https://www.tiktok.com/tag/sunset?refer=embed">#sunset</a> <a title="ride" target="_blank" href="https://www.tiktok.com/tag/ride?refer=embed">#ride</a> <a title="cinematic" target="_blank" href="https://www.tiktok.com/tag/cinematic?refer=embed">#cinematic</a> <a target="_blank" title="♬ Originalton - Oli.Nbg - Oli.RC390" href="https://www.tiktok.com/music/Originalton-OliNbg-7657744702694787862?refer=embed">♬ Originalton - Oli.Nbg - Oli.RC390</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-
-            <div class="project-info">
-                <span>Social Media</span>
-                <h3>Beliebtes Edit bei den Fans</h3>
-
-                <a href="https://www.tiktok.com/@oli.rc390?lang=de-DE"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Auf TikTok ansehen
-                </a>
-            </div>
-        </article>
-
-    </div>
-    </section>
-
-        <div class="scroll-indicator">
-            <button id="scroll"><i class="fas fa-arrow-up"></i></button>
-        </div>
-
-        <section id="contact">
-            <h2>Cooperationen- und Anfragen</h2>
-            <form id="contact-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">E-Mail:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Nachricht:</label>
-                <textarea id="message" name="message" required></textarea>
-
-                <button type="submit">Senden</button>
-            </form>
+            <p>
+                Neben der Entwicklung moderner Webseiten produziere ich Motorrad-Content und bearbeite Videos.
+                OR Studio ist der Ort, an dem ich meine Projekte, Fortschritte und Ideen präsentiere.
+            </p>
         </section>
 
+        <section id="skills" class="content-section">
+            <div class="section-heading">
+                <span class="section-label">Meine Fähigkeiten</span>
+                <h2>Tools und Technologien</h2>
+                <p>Eine Auswahl der Bereiche, mit denen ich aktuell arbeite.</p>
+            </div>
 
+            <div class="skills-grid">
+                <article class="skill-card">
+                    <i class="fa-brands fa-html5" aria-hidden="true"></i>
+                    <h3>HTML</h3>
+                    <p>Strukturierung moderner und semantischer Webseiten.</p>
+                </article>
 
+                <article class="skill-card">
+                    <i class="fa-brands fa-css3-alt" aria-hidden="true"></i>
+                    <h3>CSS</h3>
+                    <p>Responsive Layouts, Animationen und moderne Designs.</p>
+                </article>
 
+                <article class="skill-card">
+                    <i class="fa-brands fa-js" aria-hidden="true"></i>
+                    <h3>JavaScript</h3>
+                    <p>Interaktive Elemente und grundlegende Weblogik.</p>
+                </article>
 
+                <article class="skill-card">
+                    <i class="fa-solid fa-film" aria-hidden="true"></i>
+                    <h3>Video Editing</h3>
+                    <p>Schnitt, Color Grading und Social-Media-Content.</p>
+                </article>
+            </div>
+        </section>
 
+        <section id="socials" class="content-section">
+            <div class="section-heading">
+                <span class="section-label">Social Media</span>
+                <h2>Hier findest du mich</h2>
+            </div>
 
+            <div class="social-grid">
+                <a href="https://www.instagram.com/oli.rc390" class="social-card" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    <span>Instagram</span>
+                </a>
 
+                <a href="https://www.tiktok.com/@oli.rc390" class="social-card" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                    <span>TikTok</span>
+                </a>
 
+                <a href="https://github.com/saltylusor" class="social-card" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    <span>GitHub</span>
+                </a>
 
+                <a href="https://www.twitch.tv/oli_rc390" class="social-card" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+                    <span>Twitch</span>
+                </a>
+            </div>
+        </section>
 
+        <section id="portfolio" class="content-section portfolio-section">
+            <div class="section-heading">
+                <span class="section-label">Ausgewählte Arbeiten</span>
+                <h2>Meine letzten TikTok-Projekte</h2>
+                <p>Eine Auswahl meiner neuesten Motorrad-Edits und Content-Projekte.</p>
+            </div>
 
+            <div class="tiktok-grid">
+                <article class="project-card">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@oli.rc390/video/7655897236945046806" data-video-id="7655897236945046806">
+                        <section></section>
+                    </blockquote>
+                    <div class="project-info">
+                        <span>Content Creation</span>
+                        <h3>The world gets quieter at full throttle</h3>
+                        <p>Dynamischer Motorrad-Edit mit Fokus auf Stimmung, Schnitt und Sound.</p>
+                        <a href="https://www.tiktok.com/@oli.rc390/video/7655897236945046806" target="_blank" rel="noopener noreferrer">Auf TikTok ansehen</a>
+                    </div>
+                </article>
 
+                <article class="project-card">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@oli.rc390/video/7654752152254156055" data-video-id="7654752152254156055">
+                        <section></section>
+                    </blockquote>
+                    <div class="project-info">
+                        <span>Video Editing</span>
+                        <h3>Peace isn't a place. It's a ride.</h3>
+                        <p>Cinematischer Kurzclip mit ruhiger Stimmung und modernem Color Grading.</p>
+                        <a href="https://www.tiktok.com/@oli.rc390/video/7654752152254156055" target="_blank" rel="noopener noreferrer">Auf TikTok ansehen</a>
+                    </div>
+                </article>
 
+                <article class="project-card">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@oli.rc390/video/7657744574764322070" data-video-id="7657744574764322070">
+                        <section></section>
+                    </blockquote>
+                    <div class="project-info">
+                        <span>Social Media</span>
+                        <h3>Sunset Ride</h3>
+                        <p>Emotionaler Motorrad-Edit mit warmem Look und Social-Media-Fokus.</p>
+                        <a href="https://www.tiktok.com/@oli.rc390/video/7657744574764322070" target="_blank" rel="noopener noreferrer">Auf TikTok ansehen</a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
+        <div class="scroll-indicator">
+            <button id="scroll-top" type="button" aria-label="Zum Seitenanfang scrollen">
+                <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+            </button>
+        </div>
+</main>
 
-    </main>
-
-    <footer>
-        <p>&copy; 2024 orStudio. Alle Rechte vorbehalten.</p>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>© <span id="current-year"></span> OR Studio</p>
+            <nav class="footer-links" aria-label="Rechtliche Links">
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+            </nav>
+        </div>
     </footer>
 
     <script async src="https://www.tiktok.com/embed.js"></script>

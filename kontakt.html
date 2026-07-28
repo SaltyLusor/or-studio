@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="kontakt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="index" href="index.html">
+</head>
+
+<body id="top">
+    <header class="Kontakt-header">
+        <a class="brand" href="#top" aria-label="Zurück zum Seitenanfang">
+            <span class="brand-name">OR Studio</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Hauptnavigation">
+            <a href="index.html" class="nav-link">Startseite</a>
+        </nav>
+
+        
+        <div class="header-actions">
+            <button id="dark-mode-toggle" type="button" aria-label="Farbschema wechseln" aria-pressed="false">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+            </button>
+
+            <a class="logo-container" href="#top" aria-label="Zurück zum Seitenanfang">
+                <img src="Images/Logo.png" alt="OR Studio Logo">
+            </a>
+        </div>
+
+    </header>
+
+
+
+
+
+
+<section id="contact" class="content-section contact-section">
+        <div class="contact-layout">
+
+             <div class="contact-info">
+                <span class="section-label">Kontakt</span>
+
+                    <h2>Lass uns zusammenarbeiten.</h2>
+
+                    <p class="contact-intro">
+                        Du hast eine Projektidee, möchtest gemeinsam etwas entwickeln
+                        oder hast eine Frage? Schreib mir gerne eine Nachricht.
+                    </p>
+
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-location-dot"></i>
+
+                            <div>
+                                <span>Standort</span>
+                                <p>Nürnberg, Deutschland</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-lightbulb"></i>
+
+                            <div>
+                                <span>Verfügbarkeit</span>
+                                <p>Offen für kreative Projekte und Kooperationen</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-clock"></i>
+
+                            <div>
+                                <span>Antwortzeit</span>
+                                <p>In der Regel innerhalb von 24–48 Stunden</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Dein Name"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail-Adresse</label>
+
+                        <div class="input-wrapper">
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="deine@email.de"
+                                autocomplete="email"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Nachricht</label>
+
+                        <div class="input-wrapper textarea-wrapper">
+                            <i class="fa-solid fa-message"></i>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Erzähl mir von deiner Idee oder Anfrage ..."
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary contact-submit">
+                        Nachricht senden
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                    <p class="form-note">
+                        Deine Angaben werden aktuell noch nicht an einen Server übermittelt.
+                    </p>
+                </form>
+
+         </div>
+</section>
+
+
+
+
+    <script src="kontakt.js"></script>
+</body>
+</html>
