@@ -303,3 +303,46 @@ body.dark-mode .site-footer {
 .social-card i {
     font-size: 21px;
 }
+
+
+/*=============
+    Footer
+=============*/
+
+.site-footer {
+    padding: 25px;
+    color: #777;
+    text-align: center;
+    background: white;
+    box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
+}
+
+.footer-content {
+    width: min(1100px, calc(100% - 40px));
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-links a {
+    color: inherit;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
