@@ -64,9 +64,24 @@ a {
 }
 
 a:focus-visible,
-button:focus-visible {
-    outline: 3px solid rgba(105, 183, 255, 0.45);
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(105, 183, 255, 0.5);
     outline-offset: 4px;
+
+    border-radius: 8px;
+}
+
+body.dark-mode a:focus-visible,
+body.dark-mode button:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode textarea:focus-visible,
+body.dark-mode select:focus-visible,
+body.dark-mode summary:focus-visible {
+    outline-color: rgba(141, 204, 255, 0.72);
 }
 
 .site-header {
@@ -993,6 +1008,79 @@ body.dark-mode .menu-toggle:hover {
 }
 
 
+/* ===========================
+   Scroll-Reveal-Animationen
+=========================== */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.skill-card.reveal,
+.social-card.reveal,
+.project-card.reveal {
+    transform: translateY(22px) scale(0.985);
+}
+
+.skill-card.reveal.is-visible,
+.social-card.reveal.is-visible,
+.project-card.reveal.is-visible {
+    transform: translateY(0) scale(1);
+}
+
+.web-project-card.reveal {
+    transform: translateY(34px);
+}
+
+.web-project-card.reveal.is-visible {
+    transform: translateY(0);
+}
+
+
+/* ===========================
+   Skip-Link
+=========================== */
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 9999;
+
+    padding: 12px 18px;
+
+    color: white;
+    background: var(--primary-color);
+
+    border-radius: 12px;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transform: translateY(-160%);
+
+    transition: transform 0.25s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+
 @media (max-width: 1050px) {
     .site-header {
         position: sticky;
@@ -1195,6 +1283,39 @@ body.dark-mode .menu-toggle:hover {
 
 }
 
+.section-heading {
+    margin-bottom: 32px;
+}
+
+.section-heading h2,
+.contact-cta h2 {
+    font-size: clamp(29px, 9vw, 40px);
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 1.6px;
+}
+
+.content-section {
+    margin-bottom: 36px;
+}
+
+.project-info,
+.skill-card {
+    padding: 24px;
+}
+
+.social-card {
+    min-height: auto;
+    padding: 18px;
+}
+
+.footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 @media (max-width: 480px) {
 
     .project-actions {
@@ -1207,12 +1328,24 @@ body.dark-mode .menu-toggle:hover {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
         transition-duration: 0.01ms !important;
+        transition-delay: 0ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
 }
