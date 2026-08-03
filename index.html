@@ -16,7 +16,11 @@
             <span class="brand-name">OR Studio</span>
         </a>
 
-        <nav class="main-nav" aria-label="Hauptnavigation">
+        <nav
+            id="main-nav"
+            class="main-nav"
+            aria-label="Hauptnavigation"
+        >
             <a href="#about">Über mich</a>
             <a href="#skills">Skills</a>
             <a href="#portfolio">Portfolio</a>
@@ -25,11 +29,33 @@
         </nav>
 
         <div class="header-actions">
-            <button id="dark-mode-toggle" type="button" aria-label="Farbschema wechseln" aria-pressed="false">
+            <button
+                id="menu-toggle"
+                class="menu-toggle"
+                type="button"
+                aria-label="Navigation öffnen"
+                aria-expanded="false"
+                aria-controls="main-nav"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <button
+                id="dark-mode-toggle"
+                type="button"
+                aria-label="Farbschema wechseln"
+                aria-pressed="false"
+            >
                 <i class="fa-solid fa-moon" aria-hidden="true"></i>
             </button>
 
-            <a class="logo-container" href="#top" aria-label="Zurück zum Seitenanfang">
+            <a
+                class="logo-container"
+                href="#top"
+                aria-label="Zurück zum Seitenanfang"
+            >
                 <img src="Images/Logo.png" alt="OR Studio Logo">
             </a>
         </div>

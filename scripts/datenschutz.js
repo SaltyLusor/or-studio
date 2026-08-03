@@ -1,59 +1,205 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
 
-    console.log("script.js wurde geladen");
-    // Dark Mode
-    const toggleButton = document.getElementById("dark-mode-toggle");
+    const darkModeToggle =
+        document.getElementById("dark-mode-toggle");
 
-    if (toggleButton) {
-        const toggleIcon = toggleButton.querySelector("i");
-        const savedTheme = localStorage.getItem("theme");
+    const darkModeIcon =
+        darkModeToggle?.querySelector("i");
 
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark-mode");
-            toggleIcon?.classList.replace("fa-moon", "fa-sun");
-        }
+    const menuToggle =
+        document.getElementById("menu-toggle");
 
-        toggleButton.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
+    const mainNav =
+        document.getElementById("main-nav");
 
-            const darkModeActive =
-                document.body.classList.contains("dark-mode");
+    const scrollTopButton =
+        document.getElementById("scroll-top");
 
-            localStorage.setItem(
-                "theme",
-                darkModeActive ? "dark" : "light"
-            );
+    const yearElement =
+        document.getElementById("current-year");
 
-            if (toggleIcon) {
-                toggleIcon.classList.toggle("fa-moon", !darkModeActive);
-                toggleIcon.classList.toggle("fa-sun", darkModeActive);
-            }
-        });
+
+    /* ===========================
+       Dark Mode
+    =========================== */
+
+    function updateThemeIcon(isDarkMode) {
+        if (!darkModeToggle || !darkModeIcon) return;
+
+        darkModeIcon.classList.toggle(
+            "fa-sun",
+            isDarkMode
+        );
+
+        darkModeIcon.classList.toggle(
+            "fa-moon",
+            !isDarkMode
+        );
+
+        darkModeToggle.setAttribute(
+            "aria-pressed",
+            String(isDarkMode)
+        );
+
+        darkModeToggle.setAttribute(
+            "aria-label",
+            isDarkMode
+                ? "Light Mode aktivieren"
+                : "Dark Mode aktivieren"
+        );
     }
 
-    // Nach oben scrollen
-    const scrollButton = document.getElementById("scroll-top");
+    const savedTheme =
+        localStorage.getItem("theme");
 
-    if (scrollButton) {
-        scrollButton.addEventListener("click", () => {
+    const prefersDarkMode =
+        window.matchMedia?.(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+    const shouldUseDarkMode =
+        savedTheme === "dark" ||
+        (!savedTheme && prefersDarkMode);
+
+    body.classList.toggle(
+        "dark-mode",
+        shouldUseDarkMode
+    );
+
+    updateThemeIcon(shouldUseDarkMode);
+
+    darkModeToggle?.addEventListener("click", () => {
+        const isDarkMode =
+            body.classList.toggle("dark-mode");
+
+        localStorage.setItem(
+            "theme",
+            isDarkMode ? "dark" : "light"
+        );
+
+        updateThemeIcon(isDarkMode);
+    });
+
+
+    /* ===========================
+       Mobile Navigation
+    =========================== */
+
+    function openMenu() {
+        if (!menuToggle || !mainNav) return;
+
+        mainNav.classList.add("is-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Navigation schließen"
+        );
+    }
+
+    function closeMenu() {
+        if (!menuToggle || !mainNav) return;
+
+        mainNav.classList.remove("is-open");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            "Navigation öffnen"
+        );
+    }
+
+    function toggleMenu() {
+        if (!mainNav) return;
+
+        const isOpen =
+            mainNav.classList.contains("is-open");
+
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    }
+
+    menuToggle?.addEventListener(
+        "click",
+        toggleMenu
+    );
+
+    mainNav
+        ?.querySelectorAll("a")
+        .forEach((link) => {
+            link.addEventListener(
+                "click",
+                closeMenu
+            );
+        });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        const clickedElement = event.target;
+
+        if (!(clickedElement instanceof Node)) {
+            return;
+        }
+
+        const clickedInsideMenu =
+            mainNav?.contains(clickedElement);
+
+        const clickedMenuButton =
+            menuToggle?.contains(clickedElement);
+
+        if (
+            !clickedInsideMenu &&
+            !clickedMenuButton
+        ) {
+            closeMenu();
+        }
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth > 1050) {
+            closeMenu();
+        }
+    });
+
+
+    /* ===========================
+       Scroll-to-top
+    =========================== */
+
+    scrollTopButton?.addEventListener(
+        "click",
+        () => {
             window.scrollTo({
                 top: 0,
                 behavior: "smooth"
             });
-        });
-}
+        }
+    );
 
-    // Aktuelles Jahr
-    const yearElement = document.getElementById("current-year");
+
+    /* ===========================
+       Jahreszahl
+    =========================== */
 
     if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+        yearElement.textContent =
+            new Date().getFullYear();
     }
-
 });
-
-
-    //Dark-Mode-Datenschutz
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
-    const body = document.body;
-    localStorage.setItem("theme", "dark");
