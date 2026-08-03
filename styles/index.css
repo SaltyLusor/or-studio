@@ -202,7 +202,7 @@ main {
     isolation: isolate;
     overflow: hidden;
 
-    width: min(1180px, calc(100% - 40px));
+    width: 100%;
     min-height: calc(100vh - 110px);
 
     display: flex;
@@ -1265,6 +1265,7 @@ body.dark-mode::-webkit-scrollbar-track {
     background: #24282e;
 }
 
+
 /* ===========================
    Responsive
 =========================== */
@@ -1291,7 +1292,7 @@ body.dark-mode::-webkit-scrollbar-track {
     .tiktok-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
+}
 
 @media (max-width: 700px) {
     html {
@@ -1346,5 +1347,4 @@ body.dark-mode::-webkit-scrollbar-track {
     .footer-content {
         justify-content: center;
     }
-} 
 }
