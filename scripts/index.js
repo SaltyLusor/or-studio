@@ -199,3 +199,205 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+
+
+/* ===========================
+   Consent Management
+=========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const consentSettingsButton =
+    document.getElementById("open-consent-settings");
+
+    const CONSENT_KEY = "orStudioConsent";
+
+    const consentBanner = document.getElementById("consent-banner");
+    const acceptButton = document.getElementById("consent-accept");
+    const rejectButton = document.getElementById("consent-reject");
+
+    if (!consentBanner || !acceptButton || !rejectButton) {
+        return;
+    }
+
+
+
+    /* ===========================
+       Consent auslesen
+    =========================== */
+
+    function getConsent() {
+
+        const storedConsent = localStorage.getItem(CONSENT_KEY);
+
+        if (!storedConsent) {
+            return null;
+        }
+
+        try {
+            return JSON.parse(storedConsent);
+        } catch (error) {
+            localStorage.removeItem(CONSENT_KEY);
+            return null;
+        }
+    }
+
+
+    /* ===========================
+       Consent speichern
+    =========================== */
+
+    function saveConsent(externalMediaAllowed) {
+
+        const consent = {
+            necessary: true,
+            externalMedia: externalMediaAllowed,
+            timestamp: new Date().toISOString()
+        };
+
+        localStorage.setItem(
+            CONSENT_KEY,
+            JSON.stringify(consent)
+        );
+
+        return consent;
+    }
+
+
+    /* ===========================
+       Banner anzeigen
+    =========================== */
+
+    function showConsentBanner() {
+        consentBanner.hidden = false;
+    }
+
+
+    /* ===========================
+       Banner schließen
+    =========================== */
+
+    function hideConsentBanner() {
+        consentBanner.hidden = true;
+    }
+
+
+    /* ===========================
+        Einstellungen öffnen
+    =========================== */
+
+     if (consentSettingsButton) {
+    consentSettingsButton.addEventListener("click", () => {
+        showConsentBanner();
+    });
+
+
+    /* ===========================
+       TikTok laden
+    =========================== */
+
+    function loadTikTokEmbeds() {
+
+        const existingScript =
+            document.querySelector(
+                'script[data-tiktok-consent="true"]'
+            );
+
+        if (existingScript) {
+            return;
+        }
+
+        const script = document.createElement("script");
+
+        script.src = "https://www.tiktok.com/embed.js";
+        script.async = true;
+
+        script.dataset.tiktokConsent = "true";
+
+        document.body.appendChild(script);
+    }
+
+
+    /* ===========================
+       Zustimmung anwenden
+    =========================== */
+
+    function applyConsent(consent) {
+
+        if (!consent) {
+            return;
+        }
+
+        if (consent.externalMedia === true) {
+            loadTikTokEmbeds();
+        }
+    }
+
+
+    /* ===========================
+       Alle akzeptieren
+    =========================== */
+
+    acceptButton.addEventListener("click", () => {
+
+        const consent = saveConsent(true);
+
+        applyConsent(consent);
+
+        hideConsentBanner();
+
+    });
+
+
+    /* ===========================
+       Nur notwendige
+    =========================== */
+
+    rejectButton.addEventListener("click", () => {
+
+    const previousConsent = getConsent();
+
+    saveConsent(false);
+
+    hideConsentBanner();
+
+    // Falls TikTok zuvor bereits erlaubt und geladen wurde,
+    // Seite neu laden, damit externe Inhalte wirklich deaktiviert werden.
+    if (previousConsent?.externalMedia === true) {
+        window.location.reload();
+    }
+
+    });
+
+
+    /* ===========================
+       Beim Seitenstart prüfen
+    =========================== */
+
+    const existingConsent = getConsent();
+
+    if (!existingConsent) {
+
+        showConsentBanner();
+
+    } else {
+
+        applyConsent(existingConsent);
+
+    }
+
+
+    /* ===========================
+       Global verfügbar machen
+    =========================== */
+
+    window.ORStudioConsent = {
+
+        get: getConsent,
+
+        show: showConsentBanner
+
+    };
+    
+    }
+});
+
