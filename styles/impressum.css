@@ -197,7 +197,10 @@ body.dark-mode .impressum-header {
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 }
 
-body.dark-mode #dark-mode-toggle,
+body.dark-mode #dark-mode-toggle {
+    color: var(--primary-color);
+    background: #2d3239;
+}
 
 
 /* ===========================
