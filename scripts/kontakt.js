@@ -1,67 +1,109 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
 
-    console.log("script.js wurde geladen");
-    // Dark Mode
-    const toggleButton = document.getElementById("dark-mode-toggle");
+    const darkModeToggle =
+        document.getElementById("dark-mode-toggle");
 
-    if (toggleButton) {
-        const toggleIcon = toggleButton.querySelector("i");
-        const savedTheme = localStorage.getItem("theme");
+    const darkModeIcon =
+        darkModeToggle?.querySelector("i");
 
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark-mode");
-            toggleIcon?.classList.replace("fa-moon", "fa-sun");
-        }
+    const contactForm =
+        document.getElementById("contact-form");
 
-        toggleButton.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
+    const formStatus =
+        document.getElementById("form-status");
 
-            const darkModeActive =
-                document.body.classList.contains("dark-mode");
+    const yearElement =
+        document.getElementById("current-year");
 
-            localStorage.setItem(
-                "theme",
-                darkModeActive ? "dark" : "light"
-            );
 
-            if (toggleIcon) {
-                toggleIcon.classList.toggle("fa-moon", !darkModeActive);
-                toggleIcon.classList.toggle("fa-sun", darkModeActive);
-            }
-        });
+    /* ===========================
+       Dark Mode
+    =========================== */
+
+    function updateThemeIcon(isDarkMode) {
+        if (!darkModeToggle || !darkModeIcon) return;
+
+        darkModeIcon.classList.toggle(
+            "fa-sun",
+            isDarkMode
+        );
+
+        darkModeIcon.classList.toggle(
+            "fa-moon",
+            !isDarkMode
+        );
+
+        darkModeToggle.setAttribute(
+            "aria-pressed",
+            String(isDarkMode)
+        );
+
+        darkModeToggle.setAttribute(
+            "aria-label",
+            isDarkMode
+                ? "Light Mode aktivieren"
+                : "Dark Mode aktivieren"
+        );
     }
 
-    // Kontaktformular
-    const contactForm = document.getElementById("contact-form");
+    const savedTheme =
+        localStorage.getItem("theme");
 
-    if (contactForm) {
-        contactForm.addEventListener("submit", (event) => {
-            event.preventDefault();
+    const prefersDarkMode =
+        window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
 
-            alert(
-                "Vielen Dank für deine Nachricht. " +
-                "Aktuell wird noch keine E-Mail versendet."
-            );
-        });
-    }
+    const shouldUseDarkMode =
+        savedTheme === "dark" ||
+        (!savedTheme && prefersDarkMode);
 
-    // Nach oben scrollen
-    const scrollButton = document.getElementById("scroll-top");
+    body.classList.toggle(
+        "dark-mode",
+        shouldUseDarkMode
+    );
 
-    if (scrollButton) {
-        scrollButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-}
+    updateThemeIcon(shouldUseDarkMode);
 
-    // Aktuelles Jahr
-    const yearElement = document.getElementById("current-year");
+    darkModeToggle?.addEventListener("click", () => {
+        const isDarkMode =
+            body.classList.toggle("dark-mode");
+
+        localStorage.setItem(
+            "theme",
+            isDarkMode ? "dark" : "light"
+        );
+
+        updateThemeIcon(isDarkMode);
+    });
+
+
+    /* ===========================
+       Kontaktformular
+    =========================== */
+
+    contactForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!formStatus) return;
+
+        formStatus.textContent =
+            "Das Kontaktformular befindet sich aktuell noch in Entwicklung. " +
+            "Deine Angaben wurden nicht versendet oder gespeichert.";
+
+        formStatus.classList.add("is-info");
+
+        contactForm.reset();
+    });
+
+
+    /* ===========================
+       Jahreszahl
+    =========================== */
 
     if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+        yearElement.textContent =
+            new Date().getFullYear();
     }
-
 });

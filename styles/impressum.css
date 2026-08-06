@@ -115,8 +115,7 @@ textarea {
     transform: translateY(-3px);
 }
 
-#dark-mode-toggle,
-#scroll-top {
+#dark-mode-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -129,13 +128,6 @@ textarea {
     background: #eef8ff;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#dark-mode-toggle:hover,
-#scroll-top:hover {
-    transform: translateY(-3px) scale(1.06);
-    background: #dcefff;
-    box-shadow: 0 10px 25px rgba(105, 183, 255, 0.25);
 }
 
 
@@ -158,40 +150,9 @@ main {
     box-shadow: 0 15px 40px var(--shadow-color);
 }
 
-.section-heading {
-    max-width: 700px;
-    margin: 0 auto 35px;
-    text-align: center;
-}
-
-.section-label,
-.hero-label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--primary-color);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.section-heading h2 {
-    margin-bottom: 12px;
-    color: var(--primary-color);
-    font-size: clamp(30px, 5vw, 46px);
-}
-
-.content-section > p,
-.section-heading p,
-.skill-card p,
-.project-info p {
-    color: var(--muted-text);
-}
-
-.content-section > p + p {
+.impressum-content p + p {
     margin-top: 16px;
 }
-
 
 /* ===========================
    Slogan Section
@@ -201,15 +162,18 @@ main {
     text-align: center;
     padding: 80px 50px;
     transition: background 0.3s ease, color 0.3s ease;
-    font-size: clamp(18px, 2vw, 22px);
-    font-family: "League Spartan", sans-serif;
-    font-size: clamp(28px, 2vw, 22px);
+    font-size: clamp(22px, 4vw, 36px);
+    font-family: "Poppins", Arial, sans-serif;
     font-weight: 900;
     color: transparent;
-    -webkit-text-stroke: 2px #4fa8f5;
+    -webkit-text-stroke: 2px var(--primary-color);
     text-transform: uppercase;
     line-height: 0.9;
 }   
+
+.content-section.slogan-section {
+    color: var(--primary-color);
+}
 
 
 /* ===========================
@@ -234,49 +198,11 @@ body.dark-mode .impressum-header {
 }
 
 body.dark-mode #dark-mode-toggle,
-body.dark-mode #scroll-top {
-    color: #ffd76a;
-    background: #3a4049;
-}
-
-body.dark-mode .skill-card,
-body.dark-mode .project-card,
-body.dark-mode .social-card {
-    background: #292d33;
-}
-
-body.dark-mode .skill-card h3,
-body.dark-mode .project-info h3 {
-    color: #f4f7fa;
-}
-
-body.dark-mode input,
-body.dark-mode textarea {
-    color: #f0f0f0;
-    background: #363b43;
-}
-
-body.dark-mode input:focus,
-body.dark-mode textarea:focus {
-    background: #404650;
-}
-
-body.dark-mode .site-footer {
-    color: #d4d9df;
-    background: #24282e;
-}
 
 
 /* ===========================
    Social Media
 =========================== */
-
-.social-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-}
 
 .social-card {
     min-width: 150px;
@@ -286,7 +212,7 @@ body.dark-mode .site-footer {
     gap: 10px;
     padding: 14px 20px;
     color: var(--secondary-color);
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--surface-color);
     border: 1px solid var(--border-color);
     border-radius: 15px;
     font-weight: 600;
@@ -340,9 +266,101 @@ body.dark-mode .site-footer {
     color: var(--primary-color);
 }
 
+.impressum-content h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.site-footer {
+    padding: 25px;
+
+    color: var(--muted-text);
+    background: var(--surface-color);
+
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+
+    box-shadow: 0 -5px 25px var(--shadow-color);
+}
 
 
+/* ===========================
+   Barrierefreiheit
+=========================== */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 4px;
+    border-radius: 10px;
+}
 
 
+/* ===========================
+   Responsive Design
+=========================== */
+@media (max-width: 700px) {
+    main {
+        width: min(100% - 24px, 1100px);
+        padding: 36px 0;
+    }
 
+    .impressum-header {
+        padding: 10px 16px;
+        gap: 14px;
+    }
+
+    .brand-name {
+        font-size: 24px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .logo-container img {
+        width: 52px;
+        height: 52px;
+    }
+
+    #dark-mode-toggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    .content-section {
+        padding: 30px 22px;
+        border-radius: 22px;
+    }
+
+    .content-section.slogan-section {
+        padding: 50px 22px;
+        line-height: 1.1;
+    }
+
+    .footer-content {
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+
+/* ===========================
+   Bewegungsanimationen
+=========================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
 

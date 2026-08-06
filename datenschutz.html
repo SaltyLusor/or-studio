@@ -2,17 +2,38 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Datenschutzerklärung von OR Studio.">
-    <link rel="stylesheet" href="styles/datenschutz.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Datenschutzerklärung von OR Studio mit Informationen zu Hosting, externen Inhalten und Datenverarbeitung."
+    >
+
     <title>Datenschutz | OR Studio</title>
+
+    <link
+        rel="stylesheet"
+        href="styles/datenschutz.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 </head>
 
 <body class="legal-page" id="top">
 
     <header class="site-header">
-        <a class="brand" href="index.html">
+        <a
+            class="brand"
+            href="index.html"
+            aria-label="Zur Startseite"
+        >
             <span class="brand-name">OR Studio</span>
         </a>
 
@@ -21,8 +42,12 @@
                 id="dark-mode-toggle"
                 type="button"
                 aria-label="Farbschema wechseln"
+                aria-pressed="false"
             >
-                <i class="fa-solid fa-moon"></i>
+                <i
+                    class="fa-solid fa-moon"
+                    aria-hidden="true"
+                ></i>
             </button>
 
             <a
@@ -58,7 +83,7 @@
                     Datenschutz
                 </a>
 
-                <a href="index.html#contact">
+                <a href="kontakt.html">
                     Kontakt
                 </a>
             </nav>
@@ -75,9 +100,10 @@
                     <h1>Datenschutzerklärung</h1>
 
                     <p>
-                        Hier erfährst du, welche Daten beim Besuch
-                        von OR Studio verarbeitet werden und welche
-                        Dienste auf der Website eingesetzt werden.
+                        Hier erfährst du, welche personenbezogenen
+                        Daten beim Besuch von OR Studio verarbeitet
+                        werden und welche externen Dienste auf dieser
+                        Website eingesetzt werden.
                     </p>
                 </div>
 
@@ -87,129 +113,614 @@
             </header>
 
             <div class="privacy-intro">
-                <i class="fa-solid fa-shield-halved"></i>
+                <i
+                    class="fa-solid fa-shield-halved"
+                    aria-hidden="true"
+                ></i>
 
                 <div>
                     <h2>Deine Privatsphäre ist wichtig.</h2>
 
                     <p>
-                        OR Studio verarbeitet nur solche Daten,
-                        die für den Betrieb und die angebotenen
-                        Funktionen der Website erforderlich sind.
+                        Personenbezogene Daten werden auf OR Studio
+                        nur verarbeitet, soweit dies für den Betrieb,
+                        die Darstellung und die Sicherheit der Website
+                        erforderlich ist.
                     </p>
                 </div>
             </div>
 
             <div class="privacy-accordion">
 
+                <!-- Verantwortlicher -->
+
                 <details class="privacy-item" open>
                     <summary>
                         <span>
-                            <i class="fa-solid fa-user-shield"></i>
+                            <i
+                                class="fa-solid fa-user-shield"
+                                aria-hidden="true"
+                            ></i>
+
                             Verantwortlicher
                         </span>
 
-                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
                     </summary>
 
                     <div class="privacy-content">
                         <p>
-                            Hier kommen dein Name, deine
-                            Kontaktmöglichkeiten und die Angaben
-                            zum Verantwortlichen hinein.
+                            Verantwortlicher für die Datenverarbeitung
+                            auf dieser Website ist:
+                        </p>
+
+                        <address>
+                            Oliver Rzehak<br>
+                            Johann-Krieger-Straße 35<br>
+                            90469 Nürnberg<br>
+                            Deutschland
+                        </address>
+
+                        <p>
+                            E-Mail:
+                            <a href="mailto:OR@Studio.de">
+                                OR@Studio.de
+                            </a>
                         </p>
                     </div>
                 </details>
 
+                <!-- Allgemeine Hinweise -->
+
                 <details class="privacy-item">
                     <summary>
                         <span>
-                            <i class="fa-solid fa-server"></i>
+                            <i
+                                class="fa-solid fa-circle-info"
+                                aria-hidden="true"
+                            ></i>
+
+                            Allgemeine Hinweise zur Datenverarbeitung
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+
+                    <div class="privacy-content">
+                        <p>
+                            Personenbezogene Daten sind alle
+                            Informationen, durch die eine Person
+                            unmittelbar oder mittelbar identifiziert
+                            werden kann. Dazu gehören beispielsweise
+                            Namen, E-Mail-Adressen und IP-Adressen.
+                        </p>
+
+                        <p>
+                            Die Verarbeitung personenbezogener Daten
+                            erfolgt nur, wenn hierfür eine rechtliche
+                            Grundlage besteht oder die Verarbeitung
+                            für den technischen Betrieb dieser Website
+                            erforderlich ist.
+                        </p>
+
+                        <p>
+                            Soweit in dieser Datenschutzerklärung keine
+                            besondere Speicherdauer genannt wird,
+                            werden personenbezogene Daten gelöscht,
+                            sobald der Zweck ihrer Verarbeitung entfällt
+                            und keine gesetzlichen Aufbewahrungspflichten
+                            entgegenstehen.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- GitHub Pages -->
+
+                <details class="privacy-item">
+                    <summary>
+                        <span>
+                            <i
+                                class="fa-solid fa-server"
+                                aria-hidden="true"
+                            ></i>
+
                             Hosting über GitHub Pages
                         </span>
 
-                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
                     </summary>
 
                     <div class="privacy-content">
                         <p>
-                            Beschreibe hier, dass deine Website über
-                            GitHub Pages bereitgestellt wird und welche
-                            technischen Daten dabei verarbeitet werden.
+                            Diese Website wird über GitHub Pages
+                            bereitgestellt. Anbieter ist:
+                        </p>
+
+                        <address>
+                            GitHub, Inc.<br>
+                            88 Colin P. Kelly Jr. Street<br>
+                            San Francisco, CA 94107<br>
+                            USA
+                        </address>
+
+                        <p>
+                            Beim Aufruf der Website kann GitHub
+                            technische Daten verarbeiten. Dazu können
+                            insbesondere die IP-Adresse, Datum und
+                            Uhrzeit des Zugriffs, aufgerufene Dateien,
+                            Browsertyp, Betriebssystem und weitere
+                            Verbindungsdaten gehören.
+                        </p>
+
+                        <p>
+                            GitHub gibt an, dass beim Besuch einer
+                            GitHub-Pages-Website die IP-Adresse der
+                            besuchenden Person zu Sicherheitszwecken
+                            protokolliert und gespeichert wird.
+                        </p>
+
+                        <p>
+                            Die Verarbeitung erfolgt zur sicheren und
+                            zuverlässigen Bereitstellung der Website
+                            auf Grundlage von Art. 6 Abs. 1 lit. f
+                            DSGVO. Das berechtigte Interesse liegt im
+                            sicheren, stabilen und technisch
+                            funktionsfähigen Betrieb der Website.
+                        </p>
+
+                        <p>
+                            Eine Datenverarbeitung in den USA kann
+                            nicht ausgeschlossen werden. Auf Umfang,
+                            Dauer und konkrete Verarbeitung durch
+                            GitHub hat OR Studio keinen vollständigen
+                            Einfluss.
                         </p>
                     </div>
                 </details>
 
+                <!-- Local Storage -->
+
                 <details class="privacy-item">
                     <summary>
                         <span>
-                            <i class="fa-solid fa-palette"></i>
+                            <i
+                                class="fa-solid fa-palette"
+                                aria-hidden="true"
+                            ></i>
+
                             Speicherung des Farbschemas
                         </span>
 
-                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
                     </summary>
 
                     <div class="privacy-content">
                         <p>
-                            OR Studio speichert die Auswahl zwischen
-                            Light Mode und Dark Mode lokal im Browser.
+                            Auf OR Studio kann zwischen einem hellen
+                            und einem dunklen Farbschema gewählt werden.
+                        </p>
+
+                        <p>
+                            Die Auswahl wird unter dem Schlüssel
+                            <code>theme</code> im Local Storage des
+                            verwendeten Browsers gespeichert. Dadurch
+                            kann das gewählte Farbschema beim nächsten
+                            Seitenaufruf automatisch wiederhergestellt
+                            werden.
+                        </p>
+
+                        <p>
+                            Dabei werden keine Namen, E-Mail-Adressen,
+                            Nachrichten oder sonstigen Kontaktdaten
+                            gespeichert. Die gespeicherte Auswahl wird
+                            nicht an OR Studio übermittelt.
+                        </p>
+
+                        <p>
+                            Die Speicherung kann über die Einstellungen
+                            des Browsers oder durch das Löschen der
+                            Website-Daten entfernt werden.
                         </p>
                     </div>
                 </details>
 
+                <!-- Font Awesome -->
+
                 <details class="privacy-item">
                     <summary>
                         <span>
-                            <i class="fa-brands fa-tiktok"></i>
+                            <i
+                                class="fa-solid fa-icons"
+                                aria-hidden="true"
+                            ></i>
+
+                            Font Awesome über cdnjs
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+
+                    <div class="privacy-content">
+                        <p>
+                            Für die Darstellung von Symbolen und Icons
+                            wird Font Awesome über das Content Delivery
+                            Network cdnjs geladen.
+                        </p>
+
+                        <p>
+                            cdnjs wird über die Infrastruktur von
+                            Cloudflare bereitgestellt. Beim Laden der
+                            Font-Awesome-Dateien wird eine Verbindung
+                            zu Servern von Cloudflare hergestellt.
+                        </p>
+
+                        <p>
+                            Dabei können insbesondere die IP-Adresse,
+                            der Zeitpunkt des Zugriffs, Browserdaten
+                            sowie Informationen über die aufgerufene
+                            Datei verarbeitet werden.
+                        </p>
+
+                        <p>
+                            Die Einbindung erfolgt, um Icons einheitlich
+                            und technisch zuverlässig darzustellen.
+                            Rechtsgrundlage ist Art. 6 Abs. 1 lit. f
+                            DSGVO. Das berechtigte Interesse liegt in
+                            einer ansprechenden und funktionsfähigen
+                            Gestaltung der Website.
+                        </p>
+
+                        <p>
+                            Eine Datenübertragung in die USA oder andere
+                            Drittländer kann nicht ausgeschlossen werden.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- TikTok -->
+
+                <details class="privacy-item">
+                    <summary>
+                        <span>
+                            <i
+                                class="fa-brands fa-tiktok"
+                                aria-hidden="true"
+                            ></i>
+
                             Eingebettete TikTok-Inhalte
                         </span>
 
-                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
                     </summary>
 
                     <div class="privacy-content">
                         <p>
-                            Erkläre hier, dass durch eingebettete
-                            TikTok-Videos Verbindungen zu TikTok
-                            hergestellt werden können.
+                            Auf der Startseite von OR Studio sind
+                            TikTok-Videos direkt eingebettet. Zur
+                            Darstellung dieser Inhalte wird ein
+                            JavaScript von TikTok geladen.
+                        </p>
+
+                        <p>
+                            Beim Aufruf der betreffenden Seite kann
+                            dadurch bereits eine Verbindung zu Servern
+                            von TikTok hergestellt werden. TikTok kann
+                            dabei unter anderem die IP-Adresse,
+                            Geräteinformationen, Browserdaten,
+                            Nutzungsdaten und Informationen über die
+                            aufgerufene Seite verarbeiten.
+                        </p>
+
+                        <p>
+                            Falls du bei TikTok angemeldet bist, kann
+                            TikTok den Besuch dieser Website unter
+                            Umständen deinem TikTok-Konto zuordnen.
+                        </p>
+
+                        <p>
+                            Verantwortlicher Anbieter für Nutzerinnen
+                            und Nutzer im Europäischen Wirtschaftsraum
+                            ist nach Angaben von TikTok grundsätzlich:
+                        </p>
+
+                        <address>
+                            TikTok Technology Limited<br>
+                            10 Earlsfort Terrace<br>
+                            Dublin, D02 T380<br>
+                            Irland
+                        </address>
+
+                        <p>
+                            Zusätzlich kann TikTok Information
+                            Technologies UK Limited an der Verarbeitung
+                            beteiligt sein.
+                        </p>
+
+                        <p>
+                            Eine Verarbeitung oder Übermittlung von
+                            Daten außerhalb der Europäischen Union
+                            beziehungsweise des Europäischen
+                            Wirtschaftsraums kann nicht ausgeschlossen
+                            werden.
+                        </p>
+
+                        <p>
+                            Da die TikTok-Inhalte derzeit direkt geladen
+                            werden, findet keine vorherige Einwilligung
+                            über eine Zwei-Klick-Lösung statt.
+                            Für eine datenschutzfreundlichere Umsetzung
+                            sollte die Einbettung zukünftig erst nach
+                            ausdrücklicher Zustimmung geladen werden.
                         </p>
                     </div>
                 </details>
 
+                <!-- Externe Links -->
+
                 <details class="privacy-item">
                     <summary>
                         <span>
-                            <i class="fa-solid fa-envelope"></i>
+                            <i
+                                class="fa-solid fa-arrow-up-right-from-square"
+                                aria-hidden="true"
+                            ></i>
+
+                            Externe Links und Social Media
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+
+                    <div class="privacy-content">
+                        <p>
+                            Diese Website enthält Links zu externen
+                            Plattformen, insbesondere Instagram,
+                            TikTok, GitHub und Twitch.
+                        </p>
+
+                        <p>
+                            Beim bloßen Anzeigen eines normalen Links
+                            wird grundsätzlich noch keine Verbindung
+                            zur jeweiligen Plattform hergestellt.
+                            Erst wenn du den Link anklickst, wird die
+                            externe Website geöffnet.
+                        </p>
+
+                        <p>
+                            Ab diesem Zeitpunkt gelten die
+                            Datenschutzbestimmungen des jeweiligen
+                            Anbieters. OR Studio hat keinen Einfluss
+                            darauf, welche Daten die externe Plattform
+                            verarbeitet oder wie lange diese gespeichert
+                            werden.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- Kontaktformular -->
+
+                <details class="privacy-item">
+                    <summary>
+                        <span>
+                            <i
+                                class="fa-solid fa-envelope"
+                                aria-hidden="true"
+                            ></i>
+
                             Kontaktformular
                         </span>
 
-                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
                     </summary>
 
                     <div class="privacy-content">
                         <p>
-                            Beschreibe hier die Verarbeitung von Name,
-                            E-Mail-Adresse und Nachricht, sobald dein
-                            Formular tatsächlich Daten versendet.
+                            Auf der Kontaktseite befindet sich derzeit
+                            ein Kontaktformular mit Feldern für Name,
+                            E-Mail-Adresse und Nachricht.
+                        </p>
+
+                        <p>
+                            Das Formular ist aktuell eine technische
+                            Demonstration. Beim Absenden wird die
+                            Standardübertragung im Browser durch
+                            JavaScript verhindert.
+                        </p>
+
+                        <p>
+                            Die eingegebenen Daten werden derzeit
+                            weder an einen Server noch an einen
+                            externen Formulardienst übermittelt.
+                            Es findet keine dauerhafte Speicherung
+                            durch OR Studio statt.
+                        </p>
+
+                        <p>
+                            Nach dem Absenden wird lediglich eine lokale
+                            Hinweismeldung angezeigt. Anschließend
+                            können die Formularfelder im Browser
+                            zurückgesetzt werden.
+                        </p>
+
+                        <p>
+                            Sobald zukünftig ein tatsächlicher Versand
+                            über einen Server, einen E-Mail-Dienst oder
+                            einen externen Formularanbieter eingerichtet
+                            wird, muss dieser Abschnitt entsprechend
+                            aktualisiert werden.
                         </p>
                     </div>
                 </details>
 
+                <!-- Sicherheit -->
+
                 <details class="privacy-item">
                     <summary>
                         <span>
-                            <i class="fa-solid fa-scale-balanced"></i>
-                            Deine Rechte
+                            <i
+                                class="fa-solid fa-lock"
+                                aria-hidden="true"
+                            ></i>
+
+                            Verschlüsselte Verbindung
                         </span>
 
-                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
                     </summary>
 
                     <div class="privacy-content">
                         <p>
-                            Hier werden später die anwendbaren Rechte
-                            der betroffenen Personen beschrieben.
+                            Die Website wird über eine verschlüsselte
+                            HTTPS-Verbindung bereitgestellt. Dadurch
+                            werden übertragene Daten während der
+                            Verbindung zwischen Browser und Server
+                            vor einem einfachen Mitlesen durch Dritte
+                            geschützt.
+                        </p>
+
+                        <p>
+                            Eine vollständige Sicherheit bei der
+                            Datenübertragung über das Internet kann
+                            jedoch nicht garantiert werden.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- Rechte -->
+
+                <details class="privacy-item">
+                    <summary>
+                        <span>
+                            <i
+                                class="fa-solid fa-scale-balanced"
+                                aria-hidden="true"
+                            ></i>
+
+                            Deine Datenschutzrechte
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+
+                    <div class="privacy-content">
+                        <p>
+                            Soweit die jeweiligen gesetzlichen
+                            Voraussetzungen erfüllt sind, stehen dir
+                            insbesondere folgende Rechte zu:
+                        </p>
+
+                        <ul>
+                            <li>
+                                Recht auf Auskunft über deine
+                                personenbezogenen Daten
+                            </li>
+
+                            <li>
+                                Recht auf Berichtigung unrichtiger
+                                oder unvollständiger Daten
+                            </li>
+
+                            <li>
+                                Recht auf Löschung deiner Daten
+                            </li>
+
+                            <li>
+                                Recht auf Einschränkung der Verarbeitung
+                            </li>
+
+                            <li>
+                                Recht auf Datenübertragbarkeit
+                            </li>
+
+                            <li>
+                                Recht auf Widerspruch gegen bestimmte
+                                Verarbeitungen
+                            </li>
+
+                            <li>
+                                Recht auf Widerruf einer erteilten
+                                Einwilligung mit Wirkung für die Zukunft
+                            </li>
+                        </ul>
+
+                        <p>
+                            Zur Ausübung deiner Rechte kannst du dich
+                            über die oben genannte E-Mail-Adresse an
+                            den Verantwortlichen wenden.
+                        </p>
+
+                        <p>
+                            Außerdem besteht das Recht, sich bei einer
+                            Datenschutzaufsichtsbehörde zu beschweren.
+                            Dies gilt insbesondere bei der
+                            Aufsichtsbehörde deines gewöhnlichen
+                            Aufenthaltsortes, deines Arbeitsplatzes
+                            oder des Ortes des mutmaßlichen Verstoßes.
+                        </p>
+                    </div>
+                </details>
+
+                <!-- Änderungen -->
+
+                <details class="privacy-item">
+                    <summary>
+                        <span>
+                            <i
+                                class="fa-solid fa-rotate"
+                                aria-hidden="true"
+                            ></i>
+
+                            Aktualität und Änderungen
+                        </span>
+
+                        <i
+                            class="fa-solid fa-chevron-down accordion-icon"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+
+                    <div class="privacy-content">
+                        <p>
+                            Diese Datenschutzerklärung entspricht dem
+                            technischen Stand der Website im August
+                            2026.
+                        </p>
+
+                        <p>
+                            Sie wird angepasst, wenn neue Funktionen,
+                            externe Dienste, Analysewerkzeuge,
+                            Kontaktmöglichkeiten oder andere
+                            datenverarbeitende Funktionen hinzukommen.
                         </p>
                     </div>
                 </details>
@@ -217,7 +728,11 @@
             </div>
 
             <a class="back-home" href="index.html">
-                <i class="fa-solid fa-arrow-left"></i>
+                <i
+                    class="fa-solid fa-arrow-left"
+                    aria-hidden="true"
+                ></i>
+
                 Zurück zu OR Studio
             </a>
 
@@ -231,49 +746,24 @@
                 © <span id="current-year"></span> OR Studio
             </p>
 
-            <nav class="footer-links">
-                <a href="impressum.html">Impressum</a>
-                <a href="datenschutz.html">Datenschutz</a>
+            <nav
+                class="footer-links"
+                aria-label="Rechtliche Links"
+            >
+                <a href="impressum.html">
+                    Impressum
+                </a>
+
+                <a
+                    href="datenschutz.html"
+                    aria-current="page"
+                >
+                    Datenschutz
+                </a>
             </nav>
         </div>
     </footer>
 
-<script src="scripts/datenschutz.js"></script> 
+    <script src="scripts/datenschutz.js?v=2" defer></script>
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>

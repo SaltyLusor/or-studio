@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("OR Studio JavaScript wurde geladen");
     const body = document.body;
 
     const menuToggle = document.getElementById("menu-toggle");
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle?.addEventListener("click", (event) => {
         event.stopPropagation();
         
-        console.log("Menübutton wurde geklickt");
 
         const menuIsOpen = mainNav?.classList.contains("is-open");
 

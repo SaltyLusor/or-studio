@@ -135,24 +135,6 @@ textarea {
     font-weight: 700;
 }
 
-.main-nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 22px;
-}
-
-.main-nav a {
-    color: var(--secondary-color);
-    font-weight: 600;
-
-    transition: color 0.3s ease;
-}
-
-.main-nav a:hover {
-    color: var(--primary-color);
-}
-
 .header-actions {
     display: flex;
     align-items: center;
@@ -684,15 +666,6 @@ body.dark-mode .privacy-item summary > span i {
 =========================== */
 
 @media (max-width: 900px) {
-    .site-header {
-        flex-wrap: wrap;
-    }
-
-    .main-nav {
-        order: 3;
-        width: 100%;
-    }
-
     .legal-main {
         grid-template-columns: 1fr;
     }
@@ -714,6 +687,19 @@ body.dark-mode .privacy-item summary > span i {
 @media (max-width: 600px) {
     html {
         scroll-padding-top: 140px;
+    }
+
+    .legal-sidebar {
+        overflow-x: auto;
+    }
+
+    .legal-sidebar nav {
+        flex-wrap: nowrap;
+    }
+
+    .legal-sidebar a {
+        flex-shrink: 0;
+        white-space: nowrap;
     }
 
     .site-header {
@@ -781,4 +767,117 @@ body.dark-mode .privacy-item summary > span i {
         justify-content: center;
         flex-wrap: wrap;
     }
+}
+
+/*============================
+   Barrierefreiheit 
+=========================== */
+
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(105, 183, 255, 0.55);
+    outline-offset: 4px;
+    border-radius: 10px;
+}
+
+body.dark-mode a:focus-visible,
+body.dark-mode button:focus-visible,
+body.dark-mode summary:focus-visible {
+    outline-color: rgba(141, 204, 255, 0.75);
+}
+
+.privacy-content a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.privacy-content a:hover {
+    color: var(--primary-hover);
+}
+
+.privacy-content h3 {
+    margin: 22px 0 8px;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.privacy-content address {
+    margin-top: 14px;
+    color: var(--muted-text);
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.privacy-content {
+    max-width: 72ch;
+    padding: 0 22px 22px 71px;
+    line-height: 1.75;
+}
+
+
+/* ===========================
+   Privacy Policy
+=========================== */
+.privacy-content h3 {
+    margin: 22px 0 8px;
+
+    color: var(--text-color);
+
+    font-size: 18px;
+}
+
+.privacy-content address {
+    margin-top: 14px;
+
+    color: var(--muted-text);
+
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.privacy-content code {
+    padding: 2px 7px;
+
+    color: var(--primary-color);
+    background: rgba(105, 183, 255, 0.1);
+
+    border: 1px solid var(--border-color);
+    border-radius: 7px;
+
+    font-family:
+        "Cascadia Code",
+        "Consolas",
+        monospace;
+}
+
+.privacy-content a {
+    color: var(--primary-color);
+
+    font-weight: 600;
+
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.privacy-content a:hover {
+    color: var(--primary-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 3px solid rgba(105, 183, 255, 0.55);
+    outline-offset: 4px;
+
+    border-radius: 10px;
+}
+
+body.dark-mode a:focus-visible,
+body.dark-mode button:focus-visible,
+body.dark-mode summary:focus-visible {
+    outline-color: rgba(141, 204, 255, 0.75);
 }

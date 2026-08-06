@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("script.js wurde geladen");
     // Dark Mode
     const toggleButton = document.getElementById("dark-mode-toggle");
 
@@ -30,32 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    // Kontaktformular
-    const contactForm = document.getElementById("contact-form");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            alert(
-                "Vielen Dank für deine Nachricht. " +
-                "Aktuell wird noch keine E-Mail versendet."
-            );
-        });
-    }
-
-    // Nach oben scrollen
-    const scrollButton = document.getElementById("scroll-top");
-
-    if (scrollButton) {
-        scrollButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-}
 
     // Aktuelles Jahr
     const yearElement = document.getElementById("current-year");

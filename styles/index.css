@@ -1295,39 +1295,39 @@ body.dark-mode .menu-toggle:hover {
         height: 44px;
     }
 
-}
 
-.section-heading {
-    margin-bottom: 32px;
-}
+    .section-heading {
+        margin-bottom: 32px;
+    }
 
-.section-heading h2,
-.contact-cta h2 {
-    font-size: clamp(29px, 9vw, 40px);
-}
+    .section-heading h2,
+    .contact-cta h2 {
+        font-size: clamp(29px, 9vw, 40px);
+    }
 
-.section-label {
-    font-size: 11px;
-    letter-spacing: 1.6px;
-}
+    .section-label {
+        font-size: 11px;
+        letter-spacing: 1.6px;
+    }
 
-.content-section {
-    margin-bottom: 36px;
-}
+    .content-section {
+        margin-bottom: 36px;
+    }
 
-.project-info,
-.skill-card {
-    padding: 24px;
-}
+    .project-info,
+    .skill-card {
+        padding: 24px;
+    }
 
-.social-card {
-    min-height: auto;
-    padding: 18px;
-}
+    .social-card {
+        min-height: auto;
+        padding: 18px;
+    }
 
-.footer-links {
-    flex-wrap: wrap;
-    justify-content: center;
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
