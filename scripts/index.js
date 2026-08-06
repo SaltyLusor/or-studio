@@ -401,3 +401,298 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+/* ===========================
+   Consent Management
+=========================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const CONSENT_KEY = "orStudioConsent";
+
+    const consentBanner =
+        document.getElementById("consent-banner");
+
+    const acceptButton =
+        document.getElementById("consent-accept");
+
+    const rejectButton =
+        document.getElementById("consent-reject");
+
+    const consentSettingsButton =
+        document.getElementById("open-consent-settings");
+
+    const tiktokPlaceholders =
+        document.querySelectorAll(
+            ".tiktok-consent-placeholder"
+        );
+
+    const tiktokEmbeds =
+        document.querySelectorAll(
+            ".tiktok-embed"
+        );
+
+    const tiktokConsentButtons =
+        document.querySelectorAll(
+            ".tiktok-consent-button"
+        );
+
+
+    if (!consentBanner || !acceptButton || !rejectButton) {
+        return;
+    }
+
+
+    /* ===========================
+       Consent auslesen
+    =========================== */
+
+    function getConsent() {
+
+        const storedConsent =
+            localStorage.getItem(CONSENT_KEY);
+
+        if (!storedConsent) {
+            return null;
+        }
+
+        try {
+            return JSON.parse(storedConsent);
+
+        } catch (error) {
+
+            localStorage.removeItem(CONSENT_KEY);
+
+            return null;
+        }
+    }
+
+
+    /* ===========================
+       Consent speichern
+    =========================== */
+
+    function saveConsent(externalMediaAllowed) {
+
+        const consent = {
+            necessary: true,
+            externalMedia: externalMediaAllowed,
+            timestamp: new Date().toISOString()
+        };
+
+        localStorage.setItem(
+            CONSENT_KEY,
+            JSON.stringify(consent)
+        );
+
+        return consent;
+    }
+
+
+    /* ===========================
+       Consent Banner
+    =========================== */
+
+    function showConsentBanner() {
+        consentBanner.hidden = false;
+    }
+
+    function hideConsentBanner() {
+        consentBanner.hidden = true;
+    }
+
+
+    /* ===========================
+       TikTok Platzhalter
+    =========================== */
+
+    function showTikTokPlaceholders() {
+
+        tiktokPlaceholders.forEach((placeholder) => {
+            placeholder.hidden = false;
+        });
+
+        tiktokEmbeds.forEach((embed) => {
+            embed.hidden = true;
+        });
+    }
+
+
+    /* ===========================
+       TikTok Embeds anzeigen
+    =========================== */
+
+    function showTikTokEmbeds() {
+
+        tiktokPlaceholders.forEach((placeholder) => {
+            placeholder.hidden = true;
+        });
+
+        tiktokEmbeds.forEach((embed) => {
+            embed.hidden = false;
+        });
+    }
+
+
+    /* ===========================
+       TikTok Script laden
+    =========================== */
+
+    function loadTikTokEmbeds() {
+
+        showTikTokEmbeds();
+
+        const existingScript =
+            document.querySelector(
+                'script[data-tiktok-consent="true"]'
+            );
+
+        if (existingScript) {
+            return;
+        }
+
+        const script =
+            document.createElement("script");
+
+        script.src =
+            "https://www.tiktok.com/embed.js";
+
+        script.async = true;
+
+        script.dataset.tiktokConsent = "true";
+
+        document.body.appendChild(script);
+    }
+
+
+    /* ===========================
+       Zustimmung anwenden
+    =========================== */
+
+    function applyConsent(consent) {
+
+        if (!consent) {
+            showTikTokPlaceholders();
+            return;
+        }
+
+        if (consent.externalMedia === true) {
+
+            loadTikTokEmbeds();
+
+        } else {
+
+            showTikTokPlaceholders();
+
+        }
+    }
+
+
+    /* ===========================
+       Alle akzeptieren
+    =========================== */
+
+    acceptButton.addEventListener("click", () => {
+
+        const consent = saveConsent(true);
+
+        applyConsent(consent);
+
+        hideConsentBanner();
+    });
+
+
+    /* ===========================
+       Nur notwendige
+    =========================== */
+
+    rejectButton.addEventListener("click", () => {
+
+        const previousConsent = getConsent();
+
+        saveConsent(false);
+
+        showTikTokPlaceholders();
+
+        hideConsentBanner();
+
+        /*
+         * Falls TikTok bereits geladen wurde,
+         * Seite neu laden, damit die externe
+         * Verbindung wirklich beendet wird.
+         */
+
+        if (previousConsent?.externalMedia === true) {
+            window.location.reload();
+        }
+    });
+
+
+    /* ===========================
+       TikTok direkt aktivieren
+    =========================== */
+
+    tiktokConsentButtons.forEach((button) => {
+
+        button.addEventListener("click", () => {
+
+            const consent = saveConsent(true);
+
+            applyConsent(consent);
+
+            hideConsentBanner();
+        });
+
+    });
+
+
+    /* ===========================
+       Datenschutz-Einstellungen
+    =========================== */
+
+    if (consentSettingsButton) {
+
+        consentSettingsButton.addEventListener(
+            "click",
+            () => {
+
+                showConsentBanner();
+
+            }
+        );
+
+    }
+
+
+    /* ===========================
+       Beim Seitenstart prüfen
+    =========================== */
+
+    const existingConsent = getConsent();
+
+    if (!existingConsent) {
+
+        showTikTokPlaceholders();
+
+        showConsentBanner();
+
+    } else {
+
+        applyConsent(existingConsent);
+
+    }
+
+
+    /* ===========================
+       Global verfügbar
+    =========================== */
+
+    window.ORStudioConsent = {
+
+        get: getConsent,
+
+        show: showConsentBanner
+
+    };
+
+});
