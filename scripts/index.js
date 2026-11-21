@@ -696,3 +696,71 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 });
+
+
+/* ==============================
+   EVENT COUNTDOWN - OR STUDIO
+============================== */
+
+// Event-Datum festlegen
+// Format: Jahr, Monat (0-11), Tag, Stunde, Minute
+// Beispiel: 15. Juni 2027 um 18:00 Uhr
+
+const eventDate = new Date(2027, 7, 18, 18, 0, 0).getTime();
+
+const countdown = document.getElementById("countdown");
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    // Event gestartet
+    if (distance <= 0) {
+
+        countdown.innerHTML = `
+            <p class="countdown-finished">
+                The event has started! 🚀
+            </p>
+        `;
+
+        clearInterval(countdownInterval);
+        return;
+    }
+
+    // Zeit berechnen
+    const days = Math.floor(
+        distance / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (distance / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (distance / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (distance / 1000) % 60
+    );
+
+    // Werte aktualisieren
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+}
+
+// Sofort ausführen
+updateCountdown();
+
+// Jede Sekunde aktualisieren
+const countdownInterval = setInterval(updateCountdown, 1000);
